@@ -7,6 +7,7 @@ const App = () => {
 
   const [ countries, setCountries] = useState([]) 
   const [ newFilter, setNewFilter ] = useState('')
+  const [ showCountries, setShowCountries ] = useState(new Array(10).fill(false))
 
   useEffect( () => {
     axios
@@ -17,16 +18,19 @@ const App = () => {
 
   }, [])
 
-  const countriesToShow = countries.filter(country => country.name.toLowerCase().includes(newFilter.toLowerCase()))
+  const filteredCountries = countries.filter(country => country.name.toLowerCase().includes(newFilter.toLowerCase()))
 
   const handleFilterChange = (event) => {
     setNewFilter(event.target.value)
+    setShowCountries(new Array(10).fill(false))
   }
+
+
 
   return (
     <div>
       <Filter newFilter={newFilter} handleFilterChange={handleFilterChange}/>
-      <Countries countries={countriesToShow}/>
+      <Countries countries={filteredCountries} showCountries={showCountries} setShowCountries={setShowCountries} />
     </div>
   );
 }
