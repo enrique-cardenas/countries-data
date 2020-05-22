@@ -2,8 +2,7 @@ import React from 'react'
 import Country from './Country'
 import Button from './Button'
 
-const Countries = ({countries, showCountries, setShowCountries}) => {
-
+const Countries = ({countries, showCountries, setShowCountries, weather}) => {
 
   const displayCountries = () => {
     if(countries.length > 10){
@@ -32,9 +31,13 @@ const Countries = ({countries, showCountries, setShowCountries}) => {
     }
     else if(countries.length === 1){
       const country = countries[0]
+      const [ temperature, windSpeed, windDirection ] = weather
       return(
         <>
-          <Country country={country}/>
+          <Country country={country} weather={weather}/>
+          <h2>Weather in {country.capital}</h2>
+          <p><b>temperatue:</b> {temperature} Celsius</p>
+          <p><b>wind:</b> {windSpeed} m/s direction {windDirection}</p>
         </>
       )
     }
