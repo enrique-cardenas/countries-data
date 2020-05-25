@@ -1,7 +1,7 @@
 # country-data
 
 This repo contains my solutions to the exercises in part 2c of [Deep Dive Into Modern Web Development](https://fullstackopen.com/en/part2/getting_data_from_server) course. The purpose of these exercises was to create a
-React application that fetches country data from https://restcountries.eu/ and to display the weather of a certain country.
+React application that fetches country data from https://restcountries.eu/ and to display the weather of a country using a weather api, openweathermap was used in this app.
 
 ## Getting Started
 
@@ -9,7 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- Create a [open weather](https://openweathermap.org/) acccount and retrieve an API key
+- Create a [open weather map](https://openweathermap.org/) acccount and retrieve an API key
 
 
 ### Installation
